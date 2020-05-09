@@ -13,5 +13,5 @@
 
 # 実行
 
-- '''javac Main.java'''でコンパイル
-- '''java Main'''で実行
+- `javac Main.java`でコンパイル
+- `java Main`で実行
