@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args){
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
-        System.out.println("コマンドを入力してください");
+        System.out.println("enter command");
         String str = null;
         try {
             str = br.readLine();
@@ -20,29 +20,24 @@ public class Main {
 
     public static void execCommand(String str) {
         if (str.charAt(1) == 'Q'){
-            System.out.println("終了コマンドが実行されました");
             commandQ();
         }
         else if (str.charAt(1) == 'P'){
-            System.out.println("名簿表示コマンドが実行されました");
             commandP();
         }
         else if (str.charAt(1) == 'C'){
-            System.out.println("名簿件数表示コマンドが実行されました");
             commandC();
         }
         else{
-            System.out.println("有効なコマンドは %Q %P %C です");
+            System.out.println("Invalid command.");
         }
     }
     
     public static void commandQ() {
-        System.out.println("名簿管理を終了します");
         System.exit(0);
     }
 
     public static void commandP() {
-        System.out.println("名簿を表示します");
         FileInputStream fis = null;
         InputStreamReader isr = null;
         BufferedReader br = null;
@@ -59,7 +54,7 @@ public class Main {
                 arr = line.split(",");
               } else {
                 System.out.println("-------------------------------");
-                System.out.println("データ" + i + "件目");
+                System.out.println("Data: " + i);
                 String[] data = line.split(",");
                 int colno = 0;
                 for (String column : arr) {
@@ -81,7 +76,6 @@ public class Main {
     }
 
     public static void commandC() {
-        System.out.println("名簿件数を表示します");
         FileInputStream fis = null;
         InputStreamReader isr = null;
         BufferedReader br = null;
@@ -103,6 +97,6 @@ public class Main {
               e.printStackTrace();
             }
           }
-        System.out.println((i-1)+"件のデータが登録されています");
+        System.out.println((i-1)+"data(s) registered");
     }
 }
