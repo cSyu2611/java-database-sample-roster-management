@@ -5,20 +5,17 @@ import java.io.FileInputStream;
 
 public class Main {
     public static void main(String[] args){
-        
-        while(true){
-            InputStreamReader isr = new InputStreamReader(System.in);
-            BufferedReader br = new BufferedReader(isr);
-            System.out.println("コマンドを入力してください");
-            String str = null;
-            try {
-                str = br.readLine();
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            execCommand(str);
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+        System.out.println("コマンドを入力してください");
+        String str = null;
+        try {
+            str = br.readLine();
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        execCommand(str);
     }
 
     public static void execCommand(String str) {
