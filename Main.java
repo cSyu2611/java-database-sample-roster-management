@@ -97,12 +97,12 @@ public class Main {
             while ((line = br.readLine()) != null) {
               i++;
             }
-          } catch (Exception e) {
+          } catch (IOException e) {
             e.printStackTrace();
           } finally {
             try {
               br.close();
-            } catch (Exception e) {
+            } catch (IOException e) {
               e.printStackTrace();
             }
           }
